@@ -1,0 +1,49 @@
+
+:root {
+  --background-color-light: #F9FAFB; /* bg-gray-50 */
+  --text-color-light: #1F2937; /* text-gray-800 */
+  --cta-background-color: #10B981; /* bg-green-600 */
+  --cta-text-color: #FFFFFF;
+
+  --background-color-dark: #121212;
+  --text-color-dark: #F3F4F6; /* soft cream white */
+  --card-background-dark: #1F2937; 
+}
+
+.dark {
+  --background-color-light: var(--background-color-dark);
+  --text-color-light: var(--text-color-dark);
+}
+
+body {
+  background-color: var(--background-color-light);
+  color: var(--text-color-light);
+}
+
+.dark .bg-gray-50 {
+  background-color: #121212;
+}
+.dark .text-gray-800 {
+  color: #F3F4F6;
+}
+.dark .bg-white {
+    background-color: #1F2937;
+}
+.dark .text-gray-500{
+    color: #9CA3AF;
+}
+.dark .bg-green-600 {
+  background-color: #10B981;
+}
+
+.dark .text-green-100 {
+    color: #D1FAE5;
+}
+
+.dark .bg-gradient-to-r.from-green-500.to-green-600 {
+    background-image: linear-gradient(to right, #10B981, #059669);
+}
+
+.dark .bg-gray-900 {
+    background-color: #111827;
+}
