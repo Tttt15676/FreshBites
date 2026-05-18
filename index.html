@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,6 +6,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>FreshBites – Healthy Meal Delivery</title>
 <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+<link href="dark-mode.css" rel="stylesheet">
 </head>
 <body class="bg-gray-50 text-gray-800 font-sans">
 
@@ -38,6 +40,13 @@
 
   </div>
 </section>
+<div class="fixed top-4 right-4">
+  <button id="theme-toggle" class="bg-gray-200 dark:bg-gray-700 text-gray-800 dark:text-gray-200 p-2 rounded-full">
+    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M12 6a6 6 0 100 12 6 6 0 000-12z" />
+    </svg>
+  </button>
+</div>
 <!-- Problems -->
 <div class="max-w-2xl mx-auto">
   <h3 class="text-3xl font-semibold mb-12 text-center">We Understand Your Pain</h3>
@@ -410,6 +419,6 @@
 <footer class="bg-gray-900 text-white text-center py-6">
   <p>© 2026 FreshBites. All rights reserved.</p>
 </footer>
-
+<script src="script.js"></script>
 </body>
 </html>
