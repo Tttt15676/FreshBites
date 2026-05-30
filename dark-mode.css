@@ -6,7 +6,7 @@
 
   /* Shifted from Gray-800 to Gray-950 and custom ultra-darks */
   --background-color-dark: #030712;          /* Tailwind gray-950 (Very deep blue-gray) */
-  --text-color-dark: #D1D5DB;                /* Muted text to prevent neon glow */
+  --text-color-dark: #F3F4F6;                /* Restored to your original bright white */
   --card-background-dark: #111827;           /* Tailwind gray-900 */
 }
 
@@ -20,32 +20,31 @@ body {
   color: var(--text-color-light);
 }
 
-/* Darkened class overrides preserving the original color families */
+/* Darkened class overrides forced with !important */
 .dark .bg-gray-50 {
-  background-color: #030712;                 /* Deepest gray-950 */
+  background-color: #030712 !important;       /* Deepest gray-950 */
 }
 .dark .text-gray-800 {
-  color: #E5E7EB;                            /* Soft gray text */
+  color: #F3F4F6 !important;                  /* Bright white for perfect contrast on green */
 }
 .dark .bg-white {
-  background-color: #0F172A;                 /* Deep slate/gray hybrid for contrast */
+  background-color: #0F172A !important;       /* Deep slate/gray hybrid for contrast */
 }
 .dark .text-gray-500 {
-  color: #4B5563;                            /* Darker muted gray */
+  color: #4B5563 !important;                  /* Darker muted gray */
 }
 .dark .bg-green-600 {
-  background-color: #064E3B;                 /* Deep emerald green-950 */
+  background-color: #064E3B !important;       /* Deep emerald green-950 */
 }
 
 .dark .text-green-100 {
-  color: #065F46;                            /* Muted green text */
+  color: #D1FAE5 !important;                  /* Restored to your original bright mint-white */
 }
 
 .dark .bg-gradient-to-r.from-green-500.to-green-600 {
-  background-image: linear-gradient(to right, #064E3B, #022C22); /* Ultra-dark green gradient */
+  background-image: linear-gradient(to right, #064E3B, #022C22) !important; /* Ultra-dark green gradient */
 }
 
 .dark .bg-gray-900 {
-  background-color: #020617;                 /* Deepest slate-950 */
+  background-color: #020617 !important;       /* Deepest slate-950 */
 }
-
