@@ -4,10 +4,9 @@
   --cta-background-color: #10B981; 
   --cta-text-color: #FFFFFF;
 
-  /* Shifted from Gray-800 to Gray-950 and custom ultra-darks */
-  --background-color-dark: #030712;          /* Tailwind gray-950 (Very deep blue-gray) */
-  --text-color-dark: #F3F4F6;                /* Restored to your original bright white */
-  --card-background-dark: #111827;           /* Tailwind gray-900 */
+  --background-color-dark: #030712;          /* Deepest gray-950 */
+  --text-color-dark: #F3F4F6;                /* Bright white */
+  --card-background-dark: #111827;           /* Deep gray-900 */
 }
 
 .dark {
@@ -20,31 +19,24 @@ body {
   color: var(--text-color-light);
 }
 
-/* Darkened class overrides forced with !important */
-.dark .bg-gray-50 {
-  background-color: #030712 !important;       /* Deepest gray-950 */
+/* GLOBAL TEXT FORCE OVERRIDE */
+.dark, .dark * {
+  color: #F3F4F6 !important;
 }
-.dark .text-gray-800 {
-  color: #F3F4F6 !important;                  /* Bright white for perfect contrast on green */
+
+/* Background class overrides forced with !important */
+.dark .bg-gray-50 {
+  background-color: #030712 !important;       
 }
 .dark .bg-white {
-  background-color: #0F172A !important;       /* Deep slate/gray hybrid for contrast */
-}
-.dark .text-gray-500 {
-  color: #4B5563 !important;                  /* Darker muted gray */
+  background-color: #0F172A !important;       
 }
 .dark .bg-green-600 {
-  background-color: #064E3B !important;       /* Deep emerald green-950 */
+  background-color: #064E3B !important;       
 }
-
-.dark .text-green-100 {
-  color: #D1FAE5 !important;                  /* Restored to your original bright mint-white */
-}
-
 .dark .bg-gradient-to-r.from-green-500.to-green-600 {
-  background-image: linear-gradient(to right, #064E3B, #022C22) !important; /* Ultra-dark green gradient */
+  background-image: linear-gradient(to right, #064E3B, #022C22) !important; 
 }
-
 .dark .bg-gray-900 {
-  background-color: #020617 !important;       /* Deepest slate-950 */
+  background-color: #020617 !important;       
 }
