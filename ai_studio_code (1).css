@@ -1,0 +1,163 @@
+/* Smooth Scroll Behavior */
+html {
+  scroll-behavior: smooth;
+}
+
+/* Transition adjustments for theme toggle */
+body, section, div, nav, footer, button, input, textarea, h1, h2, h3, h4, p, span, a {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ==========================================================================
+   1. DEFAULT LIGHT THEME (Bright Medium Green Theme - No Grays)
+   ========================================================================== */
+body {
+  background-color: #f0fdf4 !important; /* Soft warm light mint */
+  color: #0f2d1a !important; /* Deep forest dark green for primary readability */
+}
+.bg-white {
+  background-color: #ffffff !important;
+  color: #0f2d1a !important;
+}
+.bg-gray-50 {
+  background-color: #f0fdf4 !important;
+  color: #0f2d1a !important;
+}
+.text-gray-800 {
+  color: #14532d !important; /* Deep green instead of gray */
+}
+.text-gray-600 {
+  color: #166534 !important; /* Medium-deep green */
+}
+.text-gray-700 {
+  color: #15803d !important;
+}
+.text-gray-500 {
+  color: #16a34a !important;
+}
+.border-gray-100, .border-gray-200, .border-gray-300 {
+  border-color: #bbf7d0 !important; /* Light green borders */
+}
+.bg-gray-100, .bg-gray-200 {
+  background-color: #dcfce7 !important; /* Light mint background instead of light gray */
+}
+input, textarea {
+  background-color: #ffffff !important;
+  color: #0f2d1a !important;
+  border-color: #86efac !important;
+}
+input:focus, textarea:focus {
+  border-color: #22c55e !important;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2) !important;
+}
+
+/* Bright Medium Green Accents */
+.bg-green-600 {
+  background-color: #22c55e !important; /* Bright Medium Green */
+}
+.hover\:bg-green-700:hover {
+  background-color: #16a34a !important;
+}
+.text-green-600 {
+  color: #22c55e !important;
+}
+.text-green-700 {
+  color: #16a34a !important;
+}
+.text-green-100 {
+  color: #f0fdf4 !important;
+}
+
+/* ==========================================================================
+   2. DARK THEME ACTIVE (Forest Green Theme - No Grays)
+   ========================================================================== */
+body.dark {
+  background-color: #052414 !important; /* Deep dark forest green */
+  color: #f0fdf4 !important; /* Crisp light mint text */
+}
+body.dark .bg-white {
+  background-color: #0a3d21 !important; /* Medium-dark forest green card backgrounds */
+  color: #f0fdf4 !important;
+}
+body.dark .bg-gray-50 {
+  background-color: #052414 !important;
+  color: #f0fdf4 !important;
+}
+body.dark .text-gray-800 {
+  color: #f0fdf4 !important;
+}
+body.dark .text-gray-600 {
+  color: #dcfce7 !important; /* Soft mint text */
+}
+body.dark .text-gray-700 {
+  color: #bbf7d0 !important;
+}
+body.dark .text-gray-500 {
+  color: #86efac !important;
+}
+body.dark .border-gray-100, 
+body.dark .border-gray-200, 
+body.dark .border-gray-300 {
+  border-color: #14532d !important; /* Deep forest borders */
+}
+body.dark .bg-gray-100, 
+body.dark .bg-gray-200,
+body.dark .bg-gray-700 {
+  background-color: #14532d !important; /* Deep forest accent containers */
+  color: #f0fdf4 !important;
+}
+body.dark input, 
+body.dark textarea {
+  background-color: #0a3d21 !important;
+  color: #f0fdf4 !important;
+  border-color: #166534 !important;
+}
+body.dark input::placeholder, 
+body.dark textarea::placeholder {
+  color: #86efac !important;
+  opacity: 0.6;
+}
+body.dark input:focus, 
+body.dark textarea:focus {
+  border-color: #22c55e !important;
+}
+
+/* Forest Green Theme Accents for Dark Mode */
+body.dark .bg-green-600 {
+  background-color: #15803d !important; /* Darker Forest Green */
+}
+body.dark .hover\:bg-green-700:hover {
+  background-color: #166534 !important;
+}
+body.dark .text-green-600 {
+  color: #86efac !important;
+}
+body.dark .text-green-700 {
+  color: #bbf7d0 !important;
+}
+body.dark .text-green-800 {
+  color: #f0fdf4 !important;
+}
+body.dark .text-green-100 {
+  color: #dcfce7 !important;
+}
+body.dark .bg-green-50 {
+  background-color: #0a3d21 !important;
+  color: #f0fdf4 !important;
+  border-color: #15803d !important;
+}
+body.dark .bg-green-100 {
+  background-color: #15803d !important;
+}
+body.dark .bg-gradient-to-r {
+  background-image: linear-gradient(to right, #15803d, #166534) !important;
+}
+body.dark footer {
+  background-color: #03140b !important;
+}
+body.dark .shadow-lg, 
+body.dark .shadow-md,
+body.dark .shadow-xl,
+body.dark .shadow-2xl {
+  box-shadow: 0 10px 15px -3px rgba(2, 10, 5, 0.6), 0 4px 6px -2px rgba(2, 10, 5, 0.6) !important;
+}
