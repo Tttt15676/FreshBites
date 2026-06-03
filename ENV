@@ -1,0 +1,17 @@
+# Server Configuration
+PORT=3000
+CLIENT_URL=http://localhost:3000
+
+# Stripe Credentials (Test Mode)
+STRIPE_SECRET_KEY=sk_test_...
+
+# Firebase Admin SDK Configuration
+FIREBASE_PROJECT_ID=your-project-id
+FIREBASE_CLIENT_EMAIL=firebase-adminsdk-...@://gserviceaccount.com
+# Note: Ensure the private key uses literal \n characters or is formatted correctly
+FIREBASE_PRIVATE_KEY="-----BEGIN PRIVATE KEY-----\nMIIEvgIBADANBgkqhkiG9w0BAQEFAASCBKgwggSkAgEAAoIBAQ...\n-----END PRIVATE KEY-----\n"
+
+# SendGrid Configuration
+SENDGRID_API_KEY=SG....
+SENDGRID_FROM_EMAIL=sender@yourdomain.com
+MERCHANT_EMAIL=orders@yourdomain.com
