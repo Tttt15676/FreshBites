@@ -10,6 +10,8 @@ const app = express();
 // Standard Middlewares
 app.use(cors());
 app.use(express.json());
+app.use(express.static('public'));
+
 
 // Initialize SendGrid
 sgMail.setApiKey(process.env.SENDGRID_API_KEY);
