@@ -23,28 +23,50 @@ body {
   background-color: #f0fdf4;
   color: #0f2d1a;
 }
+.text-gray-900 {
+  color: #0f2d1a;
+}
 .text-gray-800 {
   color: #14532d; /* Deep green instead of gray */
-}
-.text-gray-600 {
-  color: #166534; /* Medium-deep green */
 }
 .text-gray-700 {
   color: #15803d;
 }
+.text-gray-600 {
+  color: #166534; /* Medium-deep green */
+}
 .text-gray-500 {
   color: #16a34a;
 }
-.border-gray-100, .border-gray-200, .border-gray-300 {
+.text-gray-400 {
+  color: #16a34a;
+}
+.border-gray-100, 
+.border-gray-200, 
+.border-gray-300,
+.border-gray-400 {
   border-color: #bbf7d0; /* Light green borders */
 }
-.bg-gray-100, .bg-gray-200 {
+.bg-gray-100, 
+.bg-gray-200,
+.bg-gray-300,
+.bg-gray-400 {
   background-color: #dcfce7; /* Light mint background instead of light gray */
+}
+.bg-gray-700,
+.bg-gray-800,
+.bg-gray-900 {
+  background-color: #14532d; /* Cohesive deep green container for light mode */
+  color: #f0fdf4;
 }
 input, textarea {
   background-color: #ffffff;
   color: #0f2d1a;
   border-color: #86efac;
+}
+input::placeholder, textarea::placeholder {
+  color: #16a34a;
+  opacity: 0.6;
 }
 input:focus, textarea:focus {
   border-color: #22c55e;
@@ -83,26 +105,37 @@ body.dark .bg-gray-50 {
   background-color: #052414;
   color: #f0fdf4;
 }
-body.dark .text-gray-800 {
+body.dark .text-gray-900 {
   color: #f0fdf4;
 }
-body.dark .text-gray-600 {
-  color: #dcfce7; /* Soft mint text */
+body.dark .text-gray-800 {
+  color: #f0fdf4;
 }
 body.dark .text-gray-700 {
   color: #bbf7d0;
 }
+body.dark .text-gray-600 {
+  color: #dcfce7; /* Soft mint text */
+}
 body.dark .text-gray-500 {
+  color: #86efac;
+}
+body.dark .text-gray-400 {
   color: #86efac;
 }
 body.dark .border-gray-100, 
 body.dark .border-gray-200, 
-body.dark .border-gray-300 {
+body.dark .border-gray-300,
+body.dark .border-gray-400 {
   border-color: #14532d; /* Deep forest borders */
 }
 body.dark .bg-gray-100, 
 body.dark .bg-gray-200,
-body.dark .bg-gray-700 {
+body.dark .bg-gray-300,
+body.dark .bg-gray-400,
+body.dark .bg-gray-700,
+body.dark .bg-gray-800,
+body.dark .bg-gray-900 {
   background-color: #14532d; /* Deep forest accent containers */
   color: #f0fdf4;
 }
@@ -120,6 +153,7 @@ body.dark textarea::placeholder {
 body.dark input:focus, 
 body.dark textarea:focus {
   border-color: #22c55e;
+  box-shadow: 0 0 0 3px rgba(34, 197, 94, 0.2);
 }
 
 /* Forest Green Theme Accents for Dark Mode */
