@@ -1,16 +1,23 @@
 require('dotenv').config();
 const express = require('express');
+const path = require('path');
+const app = express();
 const cors = require('cors');
 const stripe = require('stripe')(process.env.STRIPE_SECRET_KEY);
 const admin = require('firebase-admin');
 const sgMail = require('@sendgrid/mail');
 
-const app = express();
-
 // Standard Middlewares
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(cors());
 app.use(express.json());
-app.use(express.static('public'));
+app.get('/', (req, res) => {
+  res.sendFile(path.join(__dirname, 'views', 'index.html')); });
+app.get('*', (req, res) => {
+  res.status(404).send('Page not found');
+});
+    
+  
 
 
 // Initialize SendGrid
