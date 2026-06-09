@@ -124,73 +124,54 @@ function updateCartUI() {
   document.getElementById('grand-total').innerText = `$${totalPayable.toFixed(2)}`;
 }
 
-window.submitOrder = async function(e) {
+window.submitOrder = function(e) {
   e.preventDefault();
 
   const nameVal = document.getElementById('cust-name').value.trim();
   const phoneVal = document.getElementById('cust-phone').value.trim();
   const addressVal = document.getElementById('cust-address').value.trim();
-  const instructionsVal = document.getElementById('cust-instructions').value.trim();
 
   if (!nameVal || !phoneVal || !addressVal || cart.length === 0) return;
 
-  // Change button state to visual loading
+  // Change checkout button state to processing
   const orderBtn = document.getElementById('place-order-btn');
   orderBtn.disabled = true;
-  orderBtn.innerText = "Processing...";
+  orderBtn.innerText = "Processing Payment...";
 
-  // Calculate final pricing to include in the payload
-  let subtotal = 0;
-  cart.forEach(item => {
-    subtotal += item.price * item.quantity;
-  });
-  const shippingCharge = subtotal >= 50.00 ? 0.00 : 4.99;
-  const taxCharge = subtotal * 0.0825;
-  const totalPayable = parseFloat((subtotal + shippingCharge + taxCharge).toFixed(2));
-
-  try {
-    const response = await fetch('http://localhost:5000/api/checkout', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json'
-      },
-      body: JSON.stringify({
-        name: nameVal,
-        address: addressVal,
-        phone: phoneVal,
-        instructions: instructionsVal,
-        items: cart,
-        totalPrice: totalPayable
-      })
-    });
-
-    const data = await response.json();
-
-    if (response.ok) {
-      // Clean cart and form elements local state on a successful order response
-      cart = [];
-      updateCartUI();
-      document.getElementById('checkout-form').reset();
-      
-      // If server configuration responds with a payment URL, redirect to checkout
-      if (data.url) {
-        window.location.href = data.url;
-      } else {
-        // Fallback banner success display if there is no redirect URL mapping configured
-        const successAlert = document.getElementById('success-alert');
-        successAlert.classList.remove('hidden');
-        orderBtn.disabled = false;
-        orderBtn.innerText = "Place Your Delivery Order";
-      }
-    } else {
-      alert(data.error || "An integration processing error occurred. Please try again.");
-      orderBtn.disabled = false;
-      orderBtn.innerText = "Place Your Delivery Order";
+  // Simulate payment delay for Stripe mock verification
+  setTimeout(() => {
+    const successModal = document.getElementById('success-modal');
+    if (successModal) {
+      successModal.classList.remove('hidden');
     }
-  } catch (error) {
-    console.error("Network communication failure:", error);
-    alert("Connection error. Could not contact the secure checkout service.");
+  }, 2000);
+}
+
+// Function to handle modal closure and UI reset
+window.closeSuccessModal = function() {
+  const successModal = document.getElementById('success-modal');
+  if (successModal) {
+    successModal.classList.add('hidden');
+  }
+
+  // Clear shopping cart array and trigger UI updates
+  cart = [];
+  updateCartUI();
+
+  // Reset checkout form inputs
+  const checkoutForm = document.getElementById('checkout-form');
+  if (checkoutForm) {
+    checkoutForm.reset();
+  }
+
+  // Restore checkout button style and content
+  const orderBtn = document.getElementById('place-order-btn');
+  if (orderBtn) {
     orderBtn.disabled = false;
-    orderBtn.innerText = "Place Your Delivery Order";
+    orderBtn.innerHTML = `
+      <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
+      Place Your Delivery Order
+    `;
   }
 }
+
